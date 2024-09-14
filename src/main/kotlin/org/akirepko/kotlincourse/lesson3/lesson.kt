@@ -1,4 +1,4 @@
-package org.akirepko.kotlincourse.lesson_3
+package org.akirepko.kotlincourse.lesson3
 
 val chassis: String = "!12334abc"
 
