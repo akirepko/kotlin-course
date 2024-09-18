@@ -13,7 +13,7 @@ fun main(){
 
 }
  fun soundAttenuation(soundAttenuation:Int, factor:Double?){
-     var result=factor ?: 0.5
+     val result=factor ?: 0.5
      println(result*soundAttenuation)
  }
 fun order(price :Double?){
