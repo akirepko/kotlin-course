@@ -17,7 +17,7 @@ fun main(){
      println(result*soundAttenuation)
  }
 fun order(price :Double?){
-    val delivery=(price?:10000.0)/100.0*0.5
+    val delivery=(price?:10000.0)*0.005
 
     println(delivery)
 
