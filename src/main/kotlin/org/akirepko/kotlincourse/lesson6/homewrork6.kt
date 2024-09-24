@@ -7,8 +7,8 @@ fun main(){
     println(bonusesProgramm(22222))
 }
 fun sesonDefinition(month:Int):String{
-    return if (month==1||month==2 || month==12){
-        "Winter"
+    return if (month !in 1..12){
+        "Wrong number"
     }
     else if (month in 3..5){
         "Spring"}
@@ -19,7 +19,7 @@ fun sesonDefinition(month:Int):String{
         "Fall"
     }
     else{
-        "Wrong number"
+        "Winter"
     }
 
 }
@@ -43,9 +43,11 @@ fun vehilceDefinition(way:Int):String{
 }
 
 fun bonusesProgramm(summOrder:Int):Int{
-    return if(summOrder<=100){
-         summOrder/100*2}
-    else summOrder/100*5
+    val dif=summOrder/100
+    val coef= if(summOrder<=1000){
+        2}
+    else 5
+    return dif*coef
 }
 
 fun documentsDefinintion(extension:String):String{
