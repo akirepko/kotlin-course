@@ -59,33 +59,33 @@ println("Обратный Диапазон:")
 
 //        Создайте цикл while, который выводит квадраты чисел от 1 до 5.
 
-        var counter=1
-    while(counter<=5){
-        println(counter*counter)
-        counter++
+        var counter = 1
+    while(counter++ <=5){
+        println(counter * counter)
+
     }
     println()
 
 //    Напишите цикл while, который уменьшает число от 10 до 5. После этого вывести результат в консоль
-    var counterOne=10
-    while(counterOne>=5){
-        println(counterOne--)
+    var counterOne = 10
+    while(counterOne-- >= 5){
+        println(counterOne)
     }
     println()
     println("Цикл do...while:")
 //    Используйте цикл do...while, чтобы вывести числа от 5 до 1.
-    var counterTwo=5
+    var counterTwo= 5
     do{
         println(counterTwo--)
-    }while(counterTwo>=1)
+    }while(counterTwo >= 1)
     println()
 
 
 //    Создайте цикл do...while, который повторяется, пока счетчик меньше 10, начиная с 5.
-    var counterThree=5
+    var counterThree = 5
     do{
         counterThree++
-    }while(counterThree<=10)
+    }while(counterThree <= 10)
     println()
 
 //    Задания для Прерывания и Пропуска Итерации
@@ -94,7 +94,7 @@ println("Обратный Диапазон:")
 //    Напишите цикл for от 1 до 10 и используйте break, чтобы выйти из цикла при достижении 6.
     for (i in 1..10){
         println(i)
-        if (i==6)break
+        if (i == 6)break
     }
     println()
 //    Создайте цикл while, который бесконечно выводит числа, начиная с 1, но прерывается при достижении 10.
@@ -116,9 +116,9 @@ println("Обратный Диапазон:")
     println()
 //
 //    Напишите цикл while, который выводит числа от 1 до 10, но пропускает числа, кратные 3.
-    var counterFive=0
-    while(counterFive++<10){
-        if (counterFive%3!=0){
+    var counterFive= 0
+    while(counterFive++ < 10){
+        if (counterFive% 3 != 0){
             println(counterFive)
         }
          else   continue
