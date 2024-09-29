@@ -58,7 +58,7 @@ fun main(){
     val rating = 4.948
     val balance = 2534.75856
     val text = """
-   Имя: %s
+   Имя: %12s
    Город: %s
    Возраст: %d
    Количество друзей: %,d
