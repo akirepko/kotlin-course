@@ -4,7 +4,7 @@ import org.example.org.akirepko.kotlincourse.lesson_4.lesson4
 
 fun main()
 {
-    println(transfromMessage("Это невозможно выполнить за один день"))
+    println(transfromMessage("Это невозможно выполнить за один день катастрофа "))
     println(transfromMessage("Произошла катастрофа на сервере"))
     println(transfromMessage("Этот код работает без проблем"))
     println(transfromMessage("Удача"))
@@ -89,6 +89,7 @@ fun subMessage(text:String){
     val listText=text.split(" ","-")
     var subText=""
      for (i in  listText){
+         if (i.isNotEmpty())
          subText+=i[0].uppercase()
 
      }
@@ -167,5 +168,32 @@ fun multiplicationTable(column: Int, line:Int){
             print(" %${lineBlanck}s".format(i*j))
         }
         println()
+    }
+}
+fun multiplyTable(first: Int, second: Int) {
+    val formatLength = (first * second).toString().length + 1
+    print(" ".repeat(formatLength))
+
+    val xRange = getRange(first)
+    val yRange = getRange(second)
+    val formatter = "%${formatLength}s"
+    for (i in xRange) {
+        print(formatter.format("$i"))
+    }
+    println()
+    for (i in yRange) {
+        print(formatter.format("$i"))
+        for (j in xRange) {
+            print(formatter.format("${i * j}"))
+        }
+        println()
+    }
+}
+
+private fun getRange(size: Int): IntProgression {
+    return when {
+        size > 0 -> 1..size
+        size < 0 -> -1 downTo size
+        else -> throw IllegalArgumentException("Неверное значение size")
     }
 }
