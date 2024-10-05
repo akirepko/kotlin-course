@@ -54,32 +54,47 @@ fun main() {
 //    Задание 8: Поиск Индекса Элемента
 //    Создайте массив целых чисел. Найдите индекс элемента со значением 5.
 ////    Если значения 5 нет в массиве, возвращаем -1. Реши задачу через цикл while.
-//    val numbers = arrayOf(1, 2, 3, 4, 5, 6, 7)
-//    var index = 0
-//    var foundIndex = -1
-//    for(i in  numbers.indices) {
-//            index+1
-//        }
-//    println(index)
-//
-////    while (index < numbers.size) {
-////        if (numbers[index] == 5) {
-////            foundIndex = index
-////            break // Выходим из цикла, если нашли элемент
-////        }
-////        index++
-////    }
-//    println(foundIndex)
+    val numbers = arrayOf(1, 2, 3, 4, 5, 6, 7)
+    var index = 0
+    var foundIndex = -1
+    while (index < numbers.size) {
+        if (numbers[index] == 5) {
+            foundIndex = index
+            break // Выходим из цикла, если нашли элемент
+        }
+        index++
+    }
+    println(foundIndex)
 ////    Задание 9: Перебор Массива
 //    Создайте массив целых чисел.
 //    Используйте цикл для перебора массива и вывода каждого элемента в консоль.
 //    Напротив каждого элемента должно быть написано “чётное” или “нечётное”.
-//    val myNumbers = arrayOf(1, 2, 3, 4, 5, 6, 7)
-//    for (i in myNumbers.indices){
+    val myNumbers = arrayOf(1, 2, 3, 4, 5, 6, 7)
+    val myResult = Array<String>(7) { "" }
+    for (i in myResult.indices) {
+        if (myNumbers[i] % 2 == 0) {
+            myResult[i] = "${myNumbers[i]}-четное"
+        } else myResult[i] = "${myNumbers[i]}-нечетное"
+    }
+    println(myResult.toList())
 //
 //    }
 //    Задание 10: Поиск Значения в Массиве по вхождению
-//    Создай функцию, которая принимает массив строк и строку для поиска. Функция должна находить в массиве элемент, в котором принятая строка является подстрокой (метод contains()). Верни найденный элемент из функции в виде строки.
+//    Создай функцию,
+//    которая принимает массив строк и строку для поиска.
+//    Функция должна находить в массиве элемент, в котором принятая строка
+//    является подстрокой (метод contains()).
+//    Верни найденный элемент из функции в виде строки.
 
 
+}
+
+fun searchResult(myArrayString: Array<String>, myString: String): String {
+    var searchResult = ""
+    for (i in myArrayString.indices) {
+        if (myArrayString[i].contains(myString)) {
+            searchResult = myArrayString[i]
+        } else "В массиве нет данной строки"
+    }
+    return searchResult
 }
