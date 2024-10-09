@@ -69,12 +69,10 @@ fun main() {
 
 }
 
-fun searchResult(mySetString: Set<String>, myString: String): String {
+fun searchResult(mySetString: Set<String>, myString: String):Boolean {
     var searchResult = ""
     for (i in mySetString) {
-        if (i.contains(myString)) {
-            searchResult = i
-        } else "В массиве нет данной строки"
+        if (i==myString)  return  true
     }
-    return searchResult
+    return false
 }

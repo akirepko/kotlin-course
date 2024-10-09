@@ -21,7 +21,7 @@ fun main() {
     val myInt = Array(5) { 0 }
 
     for (i in myDouble.indices) {
-        myDouble[i] = i.toDouble() * 3
+        myDouble[i]  * 3
     }
     println(myInt.toList())
 
