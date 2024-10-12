@@ -49,8 +49,8 @@ fun main() {
 //Создайте словарь, где ключами являются строки, а значениями - списки целых чисел.
 // Добавьте несколько элементов в этот словарь.
 
-    val newMap = mutableMapOf("String" to 1, "sdsd" to 3, "sdas" to 5)
-    newMap["ssss"] = 44
+    val newMap = mutableMapOf("String" to listOf(1,22,3,34), "sdsd" to listOf(1,12,3,4), "sdas" to listOf(1,2,43,4))
+    newMap["ssss"] = listOf(11,22,33,42)
 //Задание 11: Использование Множества в Качестве Значения
 //Создай словарь, в котором ключи - это целые числа, а значения - изменяемые множества строк.
 // Добавь данные в словарь.
@@ -60,9 +60,30 @@ fun main() {
     val twoSet= mutableSetOf("a", "b", "c")
 
     val myMapAndSet = mutableMapOf(1 to oneSet, 2 to twoSet)
-    oneSet.add("sss")
+    myMapAndSet[1]?.add("sdsd")
     println(oneSet)
+    val map12= mapOf(Pair(1,2) to "asd",Pair(3,4) to "asd" )
 
+    for((key, value )in map12){
+
+
+    }
+//Задание 6: Словарь Библиотека
+//Ключи - автор книги, значения - список книг
+    val mapBook= mutableMapOf<MutableSet<String>,MutableSet<String>>()
+//Задание 12: Справочник Растений
+//Ключи - типы растений (например, "Цветы", "Деревья"), значения - списки названий растений
+    val mapFlowers = mutableMapOf<List<String>,MutableSet<String>>()
+//Задание 8: Четвертьфинала
+//Ключи - названия спортивных команд, значения - списки игроков каждой команды
+    val mapTeam= mapOf<Set<String>,MutableMap<Int,String>>()
+//Задание 9: Курс лечения
+//Ключи - даты, значения - список препаратов принимаемых в дату
+    val mapMedicine= mutableMapOf<MutableMap<Int,String>,MutableMap<Int,String>>()
+//
+//Задание 10: Словарь Путешественника
+//Ключи - страны, значения - словари из городов со списком интересных мест.
+    val mapTour=mutableMapOf<MutableList<String>,MutableMap<String,String>>()
 
 }
 
@@ -79,6 +100,7 @@ fun difMap(myMap: Map<Double, Int>) {
 
 //Задание 12: Поиск Элемента по Значению
 //Создай словарь, где ключами будут пары чисел.
+
 // Через перебор найди значение у которого пара будет содержать цифру 5 в качестве первого или второго значения.
 //======
 //Напиши решения задач. В каждом случае нужно проанализировать и подобрать оптимальный тип словаря.
