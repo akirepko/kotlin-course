@@ -65,21 +65,26 @@ fun main() {
 
 //            Преобразовать текстовую коллекцию в коллекцию длин слов
     val stringsOne = mutableListOf("cv", "dfd", "sdf")
-    println( stringsOne.map { it.length })
+    println(stringsOne.map { it.length })
 
 //    Преобразовать текстовую коллекцию в мапу, где ключи - слова, а значения - перевёрнутые слова
-      val myMap=stringsOne.associate {it to it.reversed()  }
+    val myMap = stringsOne.associate { it to it.reversed() }
     println(myMap)
 //    Отсортировать список в алфавитном порядке
     stringsOne.sorted()
 //    Отсортировать список по убыванию
     stringsOne.sortedDescending()
 //            Распечатать квадраты элементов списка
-
+    numbers.forEach { println(it * it) }
 //            Группировать список по первой букве слов
+//    val newMap=strings.groupBy { it.[0] }
+//    println(newMap)
 //            Очистить список от дублей
+    numbers.distinct()
 //            Взять первые 3 элемента списка
+    numbers.take(3)
 //    Взять последние 3 элемента списка
+    numbers.takeLast(3)
 //
 //    Задание 2: Характеристика числовой коллекции
 //    Написать метод, который принимает коллекцию чисел и возвращает строку с текущим состоянием коллекции используя конструкцию when
