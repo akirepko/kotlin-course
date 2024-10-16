@@ -4,9 +4,9 @@ fun main() {
     println(myAvg(listOf(1, 2, 3)))
     println(isEven(55))
     printNumbersUntil(33)
-    println(findFirstNegative(listOf(1,-2,2,4,5)))
-    processList(listOf("ads","adasdd",null,"asdf"))
-    drawRectangle(6,7)
+    println(findFirstNegative(listOf(1, -2, 2, 4, 5)))
+    processList(listOf("ads", "adasdd", null, "asdf"))
+    drawRectangle(6, 7)
 
 }
 
@@ -83,11 +83,12 @@ fun isEven(number: Int): Boolean {
 // Если число n меньше 1,
 // функция должна прекратить выполнение с помощью return без вывода сообщений.
 fun printNumbersUntil(number: Int) {
-    if (number > 1) {
-        for (i in 1..number) {
-            println(i)
-        }
-    } else return
+    if (number < 1) return
+
+    for (i in 1..number) {
+        println(i)
+    }
+
 }
 
 //Задача 4:
@@ -102,27 +103,29 @@ fun findFirstNegative(numbers: List<Int>): Int? {
     }
     return null
 }
+
 //Задача 5:
 //Напишите функцию processList, которая принимает список строк.
 // Функция должна проходить по списку и выводить каждую строку.
 // Если встречается null значение, функция должна прекратить выполнение с помощью return
 // без возврата значения.
-fun  processList(strings:List<String?>){
+fun processList(strings: List<String?>) {
     for (i in strings)
-        if(i!=null){
+        if (i != null) {
             println(i)
 
         } else return
 }
+
 //Сделай рефакторинг функции, через определение вспомогательных приватных функций. Требуется избавиться от дублирования кода и трудно воспринимаемых фрагментов.
 //
 //Сначала сделай запуск функции и посмотри на результат её работы. Сделай запуск после рефакторинга и проверь, чтобы результат работы был аналогичным.
 //
-private fun checkSide(side:Int, name:String){
+private fun checkSide(side: Int, name: String) {
     if (side <= 0) throw IllegalArgumentException("$name должно быть положительным и больше нуля")
 }
 
-private fun borderLine(side:Int, symbolCorner:String,symbolBorder: String){
+private fun borderLine(side: Int, symbolCorner: String, symbolBorder: String) {
     var Line = symbolCorner
     for (i in 1 until side - 1) {
         Line += symbolBorder
@@ -130,21 +133,22 @@ private fun borderLine(side:Int, symbolCorner:String,symbolBorder: String){
     Line += "$symbolCorner\n"
     print(Line)
 }
+
 fun drawRectangle(width: Int, height: Int) {
-    checkSide(width,"width")
-    checkSide(height,"height")
+    checkSide(width, "width")
+    checkSide(height, "height")
 
     // Верхняя граница
-    borderLine(width,"+","-")
+    borderLine(width, "+", "-")
 
     // Боковые границы
     for (i in 1 until height - 1) {
-        borderLine(width,"|", " ")
+        borderLine(width, "|", " ")
 
     }
 
     // Нижняя граница
-    borderLine(width,"+","-")
+    borderLine(width, "+", "-")
 }
 //
 //
