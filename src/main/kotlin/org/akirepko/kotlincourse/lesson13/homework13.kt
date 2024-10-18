@@ -56,7 +56,7 @@ fun main() {
 //    filterNotNull+
     val strings = listOf("asds", null, "sd", "asdf")
 //    Отфильтровать коллекцию по диапазону 18-30
-    numbers.filter { it in 18..20 }
+    numbers.filter { it in 18..30 }
 //    Выбрать числа, которые не делятся на 2 и 3 одновременно
     numbers.filterNot { it % 6 == 0 }
 
@@ -77,7 +77,7 @@ fun main() {
 //            Распечатать квадраты элементов списка
     numbers.forEach { println(it * it) }
 //            Группировать список по первой букве слов
-    val newMap = strings.groupBy { it?.get(0) }
+    val newMap = strings.groupBy { it?.firstOrNull() }
     println(newMap)
 //            Очистить список от дублей
     numbers.distinct()
@@ -103,7 +103,9 @@ fun main() {
 //    Задание 3: Анализ Учебных Оценок
 //    Начальные значения:
     val grades = listOf(85, 58, 90, 74, 88, 67, 95, 92, 50, 42, 12)
-    grades.filter { it >= 60 }.sorted().take(3)
+    grades.filter { it >= 60 }
+        .sorted()
+        .take(3)
 //    Цель:
 //    Отфильтровать удовлетворительные оценки (>=60),
 //    отсортировать оставшиеся по возрастанию и взять первые 3.
@@ -124,7 +126,8 @@ fun main() {
         "игрушка", "Настенные часы", "подсвечник", "Журнальный столик", "сувенир",
         "Корзина для белья", "посуда", "Настольная лампа", "торшер", "Этажерка"
     )
-    println(list.map { it.lowercase() }.groupBy { it[0] })
+    println(list.map { it.lowercase() }
+        .groupBy { it[0] })
 
 //    Задание 5: Подсчёт средней длины слов в списке.
 //    Начальные значения из задачи 3.
@@ -153,7 +156,7 @@ fun main() {
 //    оторый соответствует условию (больше 18),
     val check = ages.firstOrNull { it!! > 18 }
 
-    println(ages.firstOrNull { it!! > 18 }.toString())
+    println(ages.filterNotNull().firstOrNull { it > 18 }?.toString() ?:"Подходящий возраст не найден")
 //    преобразовать его к строке, или вернуть сообщение "Подходящий возраст не найден".
 
 
@@ -207,10 +210,10 @@ fun analize(numbers: List<Int>): String {
         numbers.size < 5 -> "Короткая"
         numbers.firstOrNull() == 0 -> "Стартовая"
         numbers.sum() > 100000 -> "Массивная"
+        numbers.min() > 1000 -> "Положительная"
         numbers.average() == 10.0 -> "Сбалансированная"
         numbers.joinToString().length == 20 -> "Клейкая"
-        numbers.maxOrNull()!! < -10 -> "Отрицательная"
-        numbers.minOrNull()!! > 1000 -> "Положительная"
+        numbers.max() < -10 -> "Отрицательная"
         numbers.contains(3) && numbers.contains(14) -> "Пи***тая"
         else -> "Иначе"
     }
