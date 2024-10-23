@@ -15,7 +15,7 @@ fun main() {
 
 //В изменяемый словарь с данными о прохождении тестов добавьте новый тест и его результат.
     val mutabelTest = mutableMapOf<String, String>()
-    mutabelTest + ("test" to "result")
+    mutabelTest["test"] = "result"
 //
 //Посчитайте количество успешных тестов в словаре с результатами.
     mutabelTest.count { it.value == "passed" }

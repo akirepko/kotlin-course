@@ -1,7 +1,5 @@
 package org.example.org.akirepko.kotlincourse.lesson5
 
-import org.akirepko.kotlincourse.lesson3.report
-
 fun main(){
     val sum=10+5
    val diff=10-5
