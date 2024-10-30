@@ -76,12 +76,12 @@ fun main() {
 
     val fridge = Fridge(12)
 
-    sections.forEach { fridge.addSection(it) }
-    items.forEach {
-        if (!fridge.addItem(it)) {
-            println("Не добавлено")
-            println(it)
-        }
-    }
-    fridge.viewFridge()
+//    sections.forEach { fridge.addSection(it) }
+//    items.forEach {
+//        if (!fridge.addItem(it)) {
+//            println("Не добавлено")
+//            println(it)
+//        }
+//    }
+//    fridge.viewFridge()
 }
