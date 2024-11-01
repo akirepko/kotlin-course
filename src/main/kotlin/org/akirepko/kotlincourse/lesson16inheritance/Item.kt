@@ -148,6 +148,7 @@ class ExtractMiddle():Materials(){
         val extracted = extractMaterial()
         if (extracted.isEmpty()) {
             return ""
+
         }
         if (extracted.size == 1) {
             return extracted[0]
