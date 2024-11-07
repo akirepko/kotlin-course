@@ -4,7 +4,7 @@ import org.example.org.akirepko.kotlincourse.lesson17Polimorfizm.homework.Colors
 
 class Bird : Animal() {
     override fun makeSound() {
-        println("Tweet ${Colors.RED}")
+        println("${Colors.RED}Tweet ${Colors.RESET}")
 
     }
 }

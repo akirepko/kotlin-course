@@ -6,7 +6,7 @@ import java.awt.Color
 
 class LaserPrinter(val text: String) : Printer() {
     override fun printColored() {
-        println("${text.split(" ")}${Colors.BLACK}${Background.WHITE}")
+        println("${Colors.BLACK}${Background.WHITE}${text.split(" ")}")
 
     }
 }

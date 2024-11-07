@@ -6,4 +6,6 @@ abstract class Printer() {
 
 
     abstract fun printColored()
+
+
 }
