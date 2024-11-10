@@ -17,6 +17,8 @@ fun main() {
 
     val text= LaserPrinter("Мама  мыла раму")
     text.printColored()
+
+
     val cart = Basket()
     cart.addToCart(1)
     cart.addToCart(2, 3)

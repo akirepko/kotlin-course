@@ -29,21 +29,23 @@ package org.example.org.akirepko.kotlincourse.lesson18Inkapsulation.homework
 class Playfully {
     var color = ""
     val model = ""
-    var isOn = true
+     private var isOn = true
     private var statusOs = true
-    private var listGame = mutableListOf<String>()
-    var isGamepad = true
+    val listGame = listOf<String>()
+    val isGamepad = true
     private var balance = 0.0
-    var owner = ""
-    var number = ""
-    var winCash = 0
+    private var owner = ""
+    private var number = ""
+    private var winCash = 0
 
     fun turnOn() {
         isOn = true
+        downladOs()
     }
 
     fun turnOff() {
         isOn = false
+        turnOffOs()
     }
 
     private fun downladOs() {
@@ -54,18 +56,19 @@ class Playfully {
         statusOs = false
     }
 
-    fun showGames(): MutableList<String> {
+    fun showGames(): List<String> {
         return this.listGame
 
     }
 
-    fun turnOnGame(listGame: MutableList<String>) {
+    fun turnOnGame(listGame: List<String>) {
         showGames()[0]
     }
 
     fun payGame() {
         balance++
     }
+    fun openSafeGetCash(){}
 
     private fun cash(balance: Int) {
         balance-winCash

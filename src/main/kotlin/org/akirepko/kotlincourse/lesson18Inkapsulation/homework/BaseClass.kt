@@ -1,9 +1,11 @@
 package org.example.org.akirepko.kotlincourse.lesson18Inkapsulation.homework
 
+
+
 abstract class BaseClass(
     // объясни, почему это поле доступно в main() для чтения из класса ChildrenClass Это не это поле определено это поле из конструктора ребенка
     private val privateVal: String,
-    // объясни, почему это поле недоступно в main()
+    // объясни, почему это поле недоступно в main() оно только для наследников
     protected val protectedVal: String,
     val publicVal: String
 ) {
@@ -17,6 +19,10 @@ abstract class BaseClass(
         }
     protected var protectedField = "измени меня из функции main() через сеттер в наследнике"
     private var privateField = "добавь сеттер чтобы изменить меня из main()"
+
+    fun setPrivateField(value: String){
+        privateField=value
+    }
 
     fun getAll(): String {
         return mapOf(
@@ -62,11 +68,13 @@ class ChildrenClass(
 
 
     // объясни, почему в main() доступна функция getAll() хотя её здесь нет она публичная
-
+//    fun setProtectedField(value: String){
+//        protectedField=value
+//    }
     // проверь, что выводится на печать при вызове функции printText()
     // и объясни, почему не происходит переопределение метода privatePrint() он приватный
     override fun verifyPublicField(value: String): Boolean {
-        return false
+        return true
     }
 
     private fun privatePrint() {
