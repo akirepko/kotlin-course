@@ -49,7 +49,7 @@ fun main(){
     Вторая строка
     Третья строка
 """.trimIndent()
-
+println(empty)
 
     val name = "Алексей"
     val city = "Москва"
