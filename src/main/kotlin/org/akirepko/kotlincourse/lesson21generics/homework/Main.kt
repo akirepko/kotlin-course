@@ -19,14 +19,14 @@ fun <T> getMiddleElement(list: List<T>): T? {
     }
 }
 
-class ListHolder<T>(private var list: MutableList<T>) {
+class ListHolder<T>(private val list: MutableList<T>) {
 
     fun add(item: T) {
         this.list.add(item)
     }
 
-    fun getList(): MutableList<T> {
-        return this.list
+    fun getList(): List<T> {
+        return list.toList()
     }
 }
 
@@ -43,9 +43,8 @@ interface Validator<T> {
 }
 
 class PhrasesToListOfStrings : Mapper<String, List<String>> {
-    override fun transform(item: String): List<String> {
-        return item.split(" ").toList()
-    }
+    override fun transform(item: String): List<String> = item.split(" ")
+
 
     override fun transformList(mylist: List<String>): List<List<String>> {
         return mylist.map { transform(it) }
@@ -54,12 +53,12 @@ class PhrasesToListOfStrings : Mapper<String, List<String>> {
 }
 
 class StringValidator : Validator<String?> {
-    override fun validate(value: String?): Boolean {
-        return value.isNullOrBlank() && value.isNullOrEmpty()
-    }
+    override fun validate(value: String?): Boolean =value.isNullOrBlank()
+
 }
+
 class OddValidator : Validator<Int?> {
     override fun validate(value: Int?): Boolean {
-        return value!! %2==0
+        return value!! % 2 == 0
     }
 }
