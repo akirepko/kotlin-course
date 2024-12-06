@@ -9,11 +9,11 @@ fun main(){
     val listDouble = listOf(1.1, 2.2, 2.2, 3.4, 3.1, 4.1, 5.2, 5.2)
 
     val myUnique = fun List<Number>.() : List<Number>{
-        return toSet().toList()
+        return distinct()
     }
 
     val myUniqueOne: List<Number>.()->  List<Number> = {
-        toSet().toList()
+        distinct()
     }
 
     println(listInt.uniqueNumbers())
@@ -26,5 +26,5 @@ fun main(){
 
 
 fun List<Number>.uniqueNumbers(): List<Number>{
-    return toSet().toList()
+    return distinct()
 }

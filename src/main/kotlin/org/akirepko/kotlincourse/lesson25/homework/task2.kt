@@ -14,9 +14,9 @@ fun main() {
         return list.sum() / list.size
     }
 
-    val avgLyambda: (List<Double>)->Double ={ list ->
-        require(list.isNotEmpty())
-         list.sum() / list.size
+    val avgLyambda: (List<Double>)->Double ={
+        require(it.isNotEmpty())
+         it.sum() / it.size
     }
 
     val avgWithoutarg = { list: List<Double> ->
