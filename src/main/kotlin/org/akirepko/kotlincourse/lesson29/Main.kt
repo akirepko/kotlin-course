@@ -14,6 +14,7 @@ fun main() {
 
 
     val localDateTime = LocalDateTime.now()
+    println(localDateTime)
 
     val alarmClock = LocalDateTime.of(2024, 4, 1, 9, 0, 0)
 
