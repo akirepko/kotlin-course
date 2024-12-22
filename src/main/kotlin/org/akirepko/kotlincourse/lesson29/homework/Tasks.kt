@@ -21,7 +21,7 @@ fun main() {
 
 //    Создай период между датой своего рождения и текущей датой. Выведи на печать количество лет из этого периода.
     val currentDate = LocalDate.now()
-    val nowPeriod = Period.between(currentDate, myBirthday)
+    val nowPeriod = Period.between(currentDate, myBirthday).years
     println(nowPeriod)
 
 //    Создай объекты дат и / или времени которые мы изучили и по очереди передай их в метод созданный выше. Не используй в них метод now()
